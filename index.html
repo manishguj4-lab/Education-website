@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
@@ -10,223 +9,269 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #001f4d;
+      background: #001f4d;
       color: white;
-    }
-    a {
-      color: white;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
     header {
-      text-align: center;
+      background: #002966;
+      color: white;
       padding: 20px;
-      background-color: #001f4d;
-      border-bottom: 2px solid white;
+      text-align: center;
     }
-    .logo {
-      font-size: 32px;
+    header img {
+      max-height: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    nav {
+      background: #003366;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
-      margin-bottom: 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #001f4d;
     }
     .slider {
       position: relative;
-      width: 90%;
-      max-width: 900px;
-      margin: 20px auto;
+      max-width: 100%;
+      height: 200px;
       overflow: hidden;
-      border-radius: 10px;
-      border: 2px solid white;
-    }
-    .slides {
+      margin: 20px auto;
+      background: #fff;
+      color: #000;
       display: flex;
-      transition: 0.5s all ease-in-out;
-    }
-    .slides img {
-      width: 100%;
-      filter: grayscale(100%);
-    }
-    .folder-container {
-      display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .folders {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
       margin: 20px;
     }
     .folder {
       background: #003366;
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
       text-align: center;
-      width: 200px;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: 0.3s;
+      width: 180px;
+      transition: transform 0.3s, background 0.3s;
     }
     .folder:hover {
-      background: #0055aa;
+      transform: scale(1.05);
+      background: #002966;
     }
-    .quiz-container {
-      margin: 20px;
+    section {
       padding: 20px;
-      background: #002244;
-      border-radius: 10px;
+      margin: 20px;
+      background: #003366;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    h2 {
+      color: #ffdd00;
+    }
+    .accordion {
+      background: #002966;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 5px;
+    }
+    .active, .accordion:hover {
+      background-color: #001f4d;
+    }
+    .panel {
+      padding: 0 10px;
+      display: none;
+      background-color: #003366;
+      overflow: hidden;
+      margin-bottom: 10px;
+      border-radius: 5px;
     }
     .quiz-question {
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
-    .quiz-options button {
+    .quiz-option {
       display: block;
-      width: 100%;
       margin: 5px 0;
-      padding: 10px;
+      padding: 5px;
+      background: #002966;
       border: none;
-      border-radius: 5px;
-      background: #004080;
       color: white;
+      border-radius: 5px;
       cursor: pointer;
       transition: 0.3s;
     }
-    .quiz-options button:hover {
-      background: #0066cc;
-    }
-    .correct {
-      background: green !important;
-    }
-    .wrong {
-      background: red !important;
+    .quiz-option:hover {
+      background: #001f4d;
     }
     .explanation {
       margin-top: 5px;
-      font-size: 14px;
-      color: #ffffaa;
+      font-style: italic;
+      color: #ffdd00;
     }
-    .pdf-container {
+    footer {
       text-align: center;
-      margin: 20px;
+      background: #002966;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
     }
     iframe {
-      width: 90%;
+      width: 100%;
       height: 500px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
     }
-    .news-container {
-      margin: 20px;
-      padding: 20px;
-      background: #002244;
-      border-radius: 10px;
-    }
-    .news-container ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .news-container li {
-      margin: 10px 0;
-    }
-    @media (max-width: 768px) {
-      .folder-container {
+    @media(max-width:768px){
+      .folders {
         flex-direction: column;
         align-items: center;
+      }
+      .folder {
+        width: 80%;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">HBS Education</div>
-  <div>Trusted platform for PYQ Tests, Job News, Notes & Quizzes</div>
-</header>
+  <!-- Header -->
+  <header>
+    <img src="https://dummyimage.com/50x50/ffffff/000000.png&text=HBS" alt="Logo">
+    <span>HBS Education</span>
+  </header>
 
-<div class="slider">
-  <div class="slides" id="slides">
-    <img src="https://via.placeholder.com/900x300?text=Slide+1" alt="Slide1">
-    <img src="https://via.placeholder.com/900x300?text=Slide+2" alt="Slide2">
-    <img src="https://via.placeholder.com/900x300?text=Slide+3" alt="Slide3">
+  <!-- Slider -->
+  <div class="slider" id="slider">
+    PYQ Test से संबंधित टेस्ट देने के लिए और सभी भर्तियों की जानकारी के लिए हमारी वेबसाइट पर विज़िट करें
   </div>
-</div>
 
-<div class="folder-container">
-  <div class="folder" onclick="openSection('pyq')">PYQ Test</div>
-  <div class="folder" onclick="openSection('jobnews')">Job News</div>
-  <div class="folder" onclick="openSection('notes')">Notes</div>
-  <div class="folder" onclick="openSection('quiz')">Current Quiz</div>
-</div>
+  <!-- Folders -->
+  <div class="folders">
+    <div class="folder" onclick="openSection('pyqTest')">PYQ Test</div>
+    <div class="folder" onclick="openSection('jobNews')">Job News</div>
+    <div class="folder" onclick="openSection('notes')">Notes</div>
+    <div class="folder" onclick="openSection('currentQuiz')">Current Quiz</div>
+  </div>
 
-<div id="pyq" class="quiz-container" style="display:none;">
-  <h2>History PYQ</h2>
-  <div class="quiz-question">
-    <p>1. भारत का प्रथम राष्ट्रपति कौन था?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'correct', 'Dr. Rajendra Prasad was India\'s first President, 1950')">Dr. Rajendra Prasad</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Dr. S. Radhakrishnan</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Gandhi Ji</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Jawaharlal Nehru</button>
+  <!-- PYQ Test Section -->
+  <section id="pyqTest" style="display:none;">
+    <h2>PYQ Test</h2>
+    <button class="accordion">History PYQ</button>
+    <div class="panel">
+      <div class="quiz-question">
+        <p>1. भारत का पहला राष्ट्रपति कौन था?</p>
+        <button class="quiz-option" onclick="checkAnswer(this,'सही','Dr. Rajendra Prasad','1 Jan 1950')">डॉ. राजेंद्र प्रसाद</button>
+        <button class="quiz-option" onclick="checkAnswer(this,'गलत')">डॉ. सर्वपल्ली राधाकृष्णन</button>
+        <button class="quiz-option" onclick="checkAnswer(this,'गलत')">डॉ. सुभाष चंद्र बोस</button>
+        <p class="explanation"></p>
+      </div>
+      <div class="quiz-question">
+        <p>2. भारतीय संविधान कब लागू हुआ था?</p>
+        <button class="quiz-option" onclick="checkAnswer(this,'सही','26 जनवरी 1950','26 Jan 1950')">26 जनवरी 1950</button>
+        <button class="quiz-option" onclick="checkAnswer(this,'गलत')">15 अगस्त 1947</button>
+        <button class="quiz-option" onclick="checkAnswer(this,'गलत')">2 अक्टूबर 1950</button>
+        <p class="explanation"></p>
+      </div>
+      <!-- आगे 18 questions इसी तरह add कर सकते हो -->
     </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>2. संविधान सभा का गठन कब हुआ था?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">1947</button>
-      <button onclick="checkAnswer(this, 'correct', 'Constituent Assembly was formed in 1946')">1946</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">1950</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">1948</button>
-    </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>3. राजस्थान का पहला मुख्यमंत्री कौन था?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'correct', 'He was the first Chief Minister of Rajasthan.')">He was the first Chief Minister of Rajasthan.</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-    </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>4. राजस्थान का राज्य गठन कब हुआ था?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'correct', 'Rajasthan was formed on 30th March 1949.')">Rajasthan was formed on 30th March 1949.</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-    </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>5. राजस्थान की राजधानी जयपुर का पुराना नाम क्या था?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'correct', 'The old name of Jaipur was Amber.')">The old name of Jaipur was Amber.</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-    </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>6. राजस्थान में सबसे बड़ा जिला कौन सा है?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'correct', 'Jaisalmer is the largest district in Rajasthan.')">Jaisalmer is the largest district in Rajasthan.</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-    </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>7. राजस्थान का सबसे छोटा जिला कौन सा है?</p>
-    <div class="quiz-options">
-      <button onclick="checkAnswer(this, 'correct', 'The smallest district in Rajasthan is Dholpur.')">The smallest district in Rajasthan is Dholpur.</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-      <button onclick="checkAnswer(this, 'wrong', 'Incorrect')">Incorrect</button>
-    </div>
-    <div class="explanation"></div>
-  </div>
-  <div class="quiz-question">
-    <p>8. राजस्थान में सबसे लंबी नदी0
+  </section>
+
+  <!-- Job News Section -->
+  <section id="jobNews" style="display:none;">
+    <h2>Job News - India & Rajasthan</h2>
+    <ul>
+      <li><a href="https://rpsc.rajasthan.gov.in" target="_blank">RPSC Recruitment – Rajasthan</a></li>
+      <li><a href="https://ssc.nic.in" target="_blank">SSC Exams – India</a></li>
+      <li><a href="https://upsc.gov.in" target="_blank">UPSC Notifications – India</a></li>
+      <li><a href="https://ibps.in" target="_blank">IBPS Banking Exams – India</a></li>
+      <li><a href="https://joinindianarmy.nic.in" target="_blank">Indian Army Recruitment</a></li>
+    </ul>
+  </section>
+
+  <!-- Notes Section -->
+  <section id="notes" style="display:none;">
+    <h2>Notes</h2>
+    <iframe src="your-document.pdf"></iframe>
+  </section>
+
+  <!-- Current Quiz Section -->
+  <section id="currentQuiz" style="display:none;">
+    <h2>Current Quiz</h2>
+    <p>Coming Soon...</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 HBS Education | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Slider text animation
+    const slider = document.getElementById('slider');
+    let sliderTexts = [
+      "PYQ Test से संबंधित टेस्ट देने के लिए और सभी भर्तियों की जानकारी के लिए हमारी वेबसाइट पर विज़िट करें",
+      "Notes और PDFs भी यहाँ उपलब्ध होंगे",
+      "Current Quiz में अपनी तैयारी टेस्ट करें"
+    ];
+    let index = 0;
+    setInterval(() => {
+      slider.innerText = sliderTexts[index];
+      index = (index + 1) % sliderTexts.length;
+    }, 5000);
+
+    // Folder section toggle
+    function openSection(sectionId){
+      const sections = ['pyqTest','jobNews','notes','currentQuiz'];
+      sections.forEach(id=>{
+        document.getElementById(id).style.display = (id===sectionId)?'block':'none';
+      });
+    }
+
+    // Accordion
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
+      });
+    }
+
+    // Quiz answer check
+    function checkAnswer(btn, status, correctAnswer='', examDate='') {
+      const explanation = btn.parentElement.querySelector('.explanation');
+      if(status==='सही'){
+        explanation.innerText = `सही! उत्तर: ${correctAnswer}. Exam Date: ${examDate}`;
+      } else {
+        explanation.innerText = `गलत! सही उत्तर: ${correctAnswer}. Exam Date: ${examDate}`;
+      }
+    }
+  </script>
+
+</body>
+</html>
