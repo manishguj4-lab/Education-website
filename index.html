@@ -1,158 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education Website</title>
-  <meta name="google-site-verification" content="WHeBmv-jK_om48g2IFYL82WwdlkQt3v4uzd3mseqip0" />
+  <title>HBS Education</title>
   <style>
-    /* General Styling */
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: #f9f9f9;
       color: #333;
     }
-
     header {
-      background: #004aad;
+      background: #2c3e50;
       color: white;
-      padding: 15px 20px;
+      padding: 20px;
       text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
     }
-
     nav {
+      background: #34495e;
+      padding: 10px;
       display: flex;
       justify-content: center;
-      background: #003580;
+      gap: 20px;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      padding: 14px 20px;
-      display: block;
-      transition: background 0.3s;
+      font-weight: bold;
     }
-
     nav a:hover {
-      background: #00214d;
+      text-decoration: underline;
     }
-
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(to right, #004aad, #0073e6);
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-    }
-
-    .card {
-      background: white;
+    section {
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
+      margin: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .card:hover {
-      transform: translateY(-5px);
+    h2 {
+      color: #2c3e50;
     }
-
-    .card h3 {
-      margin: 10px 0;
-      font-size: 22px;
-      color: #004aad;
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
     }
-
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #004aad;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
-
-    .card a:hover {
-      background: #002d66;
-    }
-
     footer {
-      background: #003580;
-      color: white;
       text-align: center;
+      background: #2c3e50;
+      color: white;
       padding: 15px;
-      margin-top: 30px;
+      margin-top: 20px;
+    }
+    .coming-soon {
+      color: red;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    📚 My Education Website
+    <h1>Welcome to HBS Education</h1>
+    <p>Your trusted platform for Notes, Tests, PDFs and News</p>
   </header>
 
+  <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="notes/">Notes</a>
-    <a href="tests/">Tests</a>
-    <a href="quiz/">Quiz</a>
+    <a href="#notes">Notes</a>
+    <a href="#test">Tests</a>
+    <a href="#pdf">PDFs</a>
+    <a href="#news">News</a>
   </nav>
 
-  <section class="hero">
-    <h1>Welcome to My Learning Platform</h1>
-    <p>Find Notes, Practice Tests, and Quizzes all in one place.</p>
+  <!-- Notes Section -->
+  <section id="notes">
+    <h2>Notes</h2>
+    <p class="coming-soon">Currently not available</p>
   </section>
 
-  <section class="container">
-    <div class="card">
-      <h3>Notes</h3>
-      <p>All subject notes in one place for easy learning.</p>
-      <a href="notes/">View Notes</a>
-    </div>
-
-    <div class="card">
-      <h3>Tests</h3>
-      <p>Attempt practice tests to check your preparation.</p>
-      <a href="tests/">Start Tests</a>
-    </div>
-
-    <div class="card">
-      <h3>Quizzes</h3>
-      <p>Fun quizzes to boost your knowledge quickly.</p>
-      <a href="quiz/">Take Quiz</a>
-    </div>
+  <!-- Test Section -->
+  <section id="test">
+    <h2>Tests</h2>
+    <p>Choose from Previous Year Question (PYQ) collections:</p>
+    <ul>
+      <li>Maths PYQ</li>
+      <li>English PYQ</li>
+      <li>Hindi PYQ</li>
+      <li>Sanskrit PYQ</li>
+      <li>History PYQ</li>
+      <li>Geography PYQ</li>
+      <li>Political Science PYQ</li>
+      <li>Culture PYQ</li>
+      <li>Science PYQ</li>
+    </ul>
   </section>
 
+  <!-- PDF Section -->
+  <section id="pdf">
+    <h2>PDFs</h2>
+    <p>Upload your study material PDFs here (coming soon).</p>
+  </section>
+
+  <!-- News Section -->
+  <section id="news">
+    <h2>Latest Government Job Updates</h2>
+    <h3>Rajasthan & India</h3>
+    <ul>
+      <li><a href="https://rpsc.rajasthan.gov.in" target="_blank">RPSC Recruitment – Rajasthan</a></li>
+      <li><a href="https://ssc.nic.in" target="_blank">SSC Exams – India</a></li>
+      <li><a href="https://upsc.gov.in" target="_blank">UPSC Notifications – India</a></li>
+      <li><a href="https://ibps.in" target="_blank">IBPS Banking Exams – India</a></li>
+      <li><a href="https://joinindianarmy.nic.in" target="_blank">Indian Army Recruitment</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2025 My Education Website | All Rights Reserved
+    <p>&copy; 2025 HBS Education | All Rights Reserved</p>
   </footer>
 
 </body>
