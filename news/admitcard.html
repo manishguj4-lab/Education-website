@@ -3,24 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admit Cards | HBS Education</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Admit Cards - HBS Education</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; }
+    .navbar { background:#003399; color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+    .navbar h1 { margin:0; font-size:22px; }
+    .navbar img { height:50px; border-radius:8px; }
+    header { background:linear-gradient(135deg, #0073e6, #003399); color:white; text-align:center; padding:40px 20px; }
+    .content { max-width:900px; margin:20px auto; padding:20px; }
+    .card-box { background:white; padding:20px; margin-bottom:15px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+    .card-box h3 { margin:0 0 10px; color:#003399; }
+    .card-box a { color:#0073e6; text-decoration:none; font-weight:bold; }
+    footer { background:#003399; color:white; text-align:center; padding:15px; margin-top:20px; }
+  </style>
 </head>
 <body>
+  <div class="navbar">
+    <h1>HBS Education</h1>
+    <img src="../images/logo.png" alt="Logo">
+  </div>
+
   <header>
-    <h1>🎟 Admit Cards</h1>
+    <h2>Latest Admit Cards</h2>
+    <p>Download your admit cards easily</p>
   </header>
 
-  <main>
-    <ul>
-      <li>Rajasthan Police Admit Card 2025 – <a href="#">Download</a></li>
-      <li>SSC CGL Admit Card 2025 – <a href="#">Download</a></li>
-      <li>Railway Group D Admit Card 2025 – <a href="#">Download</a></li>
-    </ul>
-  </main>
+  <div class="content">
+    <div class="card-box">
+      <h3>SSC CGL 2025 Admit Card</h3>
+      <a href="#">Download Here</a>
+    </div>
+    <div class="card-box">
+      <h3>Railway Group D 2025 Admit Card</h3>
+      <a href="#">Download Here</a>
+    </div>
+    <div class="card-box">
+      <h3>REET 2025 Admit Card</h3>
+      <a href="#">Download Here</a>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 HBS Education</p>
+    <p>© 2025 HBS Education | All Rights Reserved</p>
   </footer>
 </body>
 </html>
