@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>History Quiz</title>
+<title>History Quiz - Test 1</title>
 <style>
 body { font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; }
 h1 { text-align: center; }
@@ -16,57 +16,25 @@ h1 { text-align: center; }
 </head>
 <body>
 <div class="quiz-container">
-  <h1>History Quiz (RSMSSB/RPSC)</h1>
+  <h1>History Quiz - Test 1</h1>
   <div id="quiz"></div>
   <button id="nextBtn" style="margin-top:20px; padding:10px 20px;">Next Question</button>
 </div>
 
 <script>
-// Sample Questions (expand this array to 500 questions)
+// Sample Questions
 const questions = [
-  {
-    question: "Who was the first Emperor of the Maurya Dynasty?",
-    options: ["Chandragupta Maurya", "Bindusara", "Ashoka", "Bimbisara"],
-    answer: 0,
-    explanation: "Chandragupta Maurya established the Maurya Empire in 321 BCE.",
-    exam: "RPSC Assistant Professor",
-    date: "12/10/2021"
-  },
-  {
-    question: "The Battle of Plassey was fought in which year?",
-    options: ["1757", "1761", "1775", "1780"],
-    answer: 0,
-    explanation: "The Battle of Plassey was fought between the British East India Company and the Nawab of Bengal, Siraj-ud-Daula.",
-    exam: "RSMSSB Patwar",
-    date: "24/10/2021"
-  },
-  {
-    question: "Who wrote the Indian epic 'Mahabharata'?",
-    options: ["Valmiki", "Vyasa", "Kalidasa", "Bharavi"],
-    answer: 1,
-    explanation: "Vyasa is credited with compiling the Mahabharata.",
-    exam: "RPSC School Lecturer",
-    date: "15/05/2020"
-  },
-  {
-    question: "Which Mughal emperor built the Taj Mahal?",
-    options: ["Akbar", "Aurangzeb", "Shah Jahan", "Jahangir"],
-    answer: 2,
-    explanation: "Shah Jahan built the Taj Mahal in memory of his wife Mumtaz Mahal.",
-    exam: "RSMSSB Patwari",
-    date: "21/10/2019"
-  },
-  {
-    question: "The Indian National Congress was founded in which year?",
-    options: ["1885", "1905", "1920", "1935"],
-    answer: 0,
-    explanation: "The Indian National Congress was founded in 1885 by Allan Octavian Hume.",
-    exam: "RPSC Assistant Professor",
-    date: "10/03/2022"
-  }
+  {question:"Who was the first Emperor of the Maurya Dynasty?", options:["Chandragupta Maurya","Bindusara","Ashoka","Bimbisara"], answer:0, explanation:"Chandragupta Maurya established the Maurya Empire in 321 BCE.", exam:"RPSC Assistant Professor", date:"12/10/2021"},
+  {question:"The Battle of Plassey was fought in which year?", options:["1757","1761","1775","1780"], answer:0, explanation:"The Battle of Plassey was fought between the British East India Company and the Nawab of Bengal, Siraj-ud-Daula.", exam:"RSMSSB Patwar", date:"24/10/2021"},
+  {question:"Who wrote the Indian epic 'Mahabharata'?", options:["Valmiki","Vyasa","Kalidasa","Bharavi"], answer:1, explanation:"Vyasa is credited with compiling the Mahabharata.", exam:"RPSC School Lecturer", date:"15/05/2020"},
+  {question:"Which Mughal emperor built the Taj Mahal?", options:["Akbar","Aurangzeb","Shah Jahan","Jahangir"], answer:2, explanation:"Shah Jahan built the Taj Mahal in memory of his wife Mumtaz Mahal.", exam:"RSMSSB Patwari", date:"21/10/2019"},
+  {question:"The Indian National Congress was founded in which year?", options:["1885","1905","1920","1935"], answer:0, explanation:"The Indian National Congress was founded in 1885 by Allan Octavian Hume.", exam:"RPSC Assistant Professor", date:"10/03/2022"}
 ];
 
 let currentQuestion = 0;
+let correctCount = 0;
+let wrongCount = 0;
+
 const quizDiv = document.getElementById("quiz");
 const nextBtn = document.getElementById("nextBtn");
 
@@ -88,11 +56,12 @@ function checkAnswer(selected) {
   if(selected === q.answer) {
     feedback.style.color = "green";
     feedback.innerHTML = "Correct! ✅ " + q.explanation;
+    correctCount++;
   } else {
     feedback.style.color = "red";
     feedback.innerHTML = `Wrong! ❌ Correct Answer: ${q.options[q.answer]}<br>${q.explanation}`;
+    wrongCount++;
   }
-  // Disable all buttons after answer
   const buttons = document.querySelectorAll(".options button");
   buttons.forEach(btn => btn.disabled = true);
 }
@@ -100,7 +69,9 @@ function checkAnswer(selected) {
 nextBtn.addEventListener("click", () => {
   currentQuestion++;
   if(currentQuestion >= questions.length) {
-    quizDiv.innerHTML = "<h2>Quiz Completed!</h2>";
+    quizDiv.innerHTML = `<h2>Quiz Completed!</h2>
+                         <p>Total Correct: ${correctCount}</p>
+                         <p>Total Wrong: ${wrongCount}</p>`;
     nextBtn.style.display = "none";
   } else {
     showQuestion();
