@@ -44,33 +44,32 @@
       margin-bottom: 10px;
     }
 
-    /* Circle Menu */
-    .circle-menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
+    /* Subject Grid */
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
       padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .circle {
-      width: 120px;
-      height: 120px;
+    .subject-box {
       background: #003399;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 30px;
+      text-align: center;
       font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
       transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .circle:hover {
+    .subject-box:hover {
       background: #0055cc;
-      transform: scale(1.1);
+      transform: translateY(-5px);
     }
 
     /* Footer */
@@ -97,13 +96,21 @@
     <p>Select a Subject to Start Your Practice</p>
   </header>
 
-  <!-- Circle Menu for Subjects -->
+  <!-- Subject Grid -->
   <main>
-    <section class="circle-menu">
-      <a href="tests/math.html" class="circle">Math</a>
-      <a href="tests/reasoning.html" class="circle">Reasoning</a>
-      <a href="tests/english.html" class="circle">English</a>
-      <a href="tests/gk.html" class="circle">GK</a>
+    <section class="subject-grid">
+      <a href="tests/history.html" class="subject-box">History PYQ</a>
+      <a href="tests/hindi.html" class="subject-box">Hindi PYQ</a>
+      <a href="tests/math.html" class="subject-box">Math PYQ</a>
+      <a href="tests/culture.html" class="subject-box">Culture PYQ</a>
+      <a href="tests/science.html" class="subject-box">Science PYQ</a>
+      <a href="tests/geography.html" class="subject-box">Geography PYQ</a>
+      <a href="tests/english.html" class="subject-box">English PYQ</a>
+      <a href="tests/computer.html" class="subject-box">Computer PYQ</a>
+      <a href="tests/current.html" class="subject-box">Current Affairs PYQ</a>
+      <a href="tests/india-geography.html" class="subject-box">India Geography PYQ</a>
+      <a href="tests/india-history.html" class="subject-box">India History PYQ</a>
+      <a href="tests/world-geography.html" class="subject-box">World Geography PYQ</a>
     </section>
   </main>
 
