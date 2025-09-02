@@ -3,89 +3,89 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.yourwebsite.com/</loc>
+    <loc>https://hbseducation.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
 
   <!-- Main Sections -->
   <url>
-    <loc>https://www.yourwebsite.com/tests.html</loc>
+    <loc>https://hbseducation.netlify.app/tests.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/notes.html</loc>
+    <loc>https://hbseducation.netlify.app/notes.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/pdf.html</loc>
+    <loc>https://hbseducation.netlify.app/pdf.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/news.html</loc>
+    <loc>https://hbseducation.netlify.app/news.html</loc>
     <priority>0.9</priority>
   </url>
 
   <!-- Test Subjects -->
   <url>
-    <loc>https://www.yourwebsite.com/tests/history-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/history-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/hindi-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/hindi-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/math-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/math-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/culture-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/culture-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/science-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/science-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/geography-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/geography-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/english-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/english-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/computer-pyq.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/computer-pyq.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/current.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/current.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/india-history.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/india-history.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/india-geography.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/india-geography.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/tests/world-geography.html</loc>
+    <loc>https://hbseducation.netlify.app/tests/world-geography.html</loc>
     <priority>0.7</priority>
   </url>
 
   <!-- News Sections -->
   <url>
-    <loc>https://www.yourwebsite.com/news/admit-card.html</loc>
+    <loc>https://hbseducation.netlify.app/news/admit-card.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/news/result.html</loc>
+    <loc>https://hbseducation.netlify.app/news/result.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.yourwebsite.com/news/information.html</loc>
+    <loc>https://hbseducation.netlify.app/news/information.html</loc>
     <priority>0.6</priority>
   </url>
 
