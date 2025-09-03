@@ -1,0 +1,131 @@
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Header / Banner */
+header {
+  background: #003399;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #0055cc;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li:hover {
+  color: #ffdd00;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #003399;
+}
+
+.card p {
+  display: none;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card.active p {
+  display: block;
+}
+
+/* Contact Section */
+#contact {
+  padding:40px 20px;
+  text-align:center;
+  background:#e2e8f0;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #003399;
+  }
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
