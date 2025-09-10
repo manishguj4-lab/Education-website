@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBS Education - Online Learning Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #4a6fc7;
+            --secondary: #6c4ac7;
+            --accent: #3bb4c1;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+        
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .translator-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .translator-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #e0f7ff 0%, #f0e6ff 100%);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Cards Section */
+        .cards-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--dark);
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-icon {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status.available {
+            background-color: #e6f7ee;
+            color: var(--success);
+        }
+        
+        .status.unavailable {
+            background-color: #fce8e8;
+            color: var(--danger);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero {
+                padding: 150px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#tests">Tests</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <a href="#home" class="logo">HBS Education</a>
+            
+            <button class="translator-btn">English ↔ Hindi</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to HBS Education</h1>
+            <p>Your premier destination for structured learning, practice tests, and educational resources. Enhance your knowledge and excel in your academic journey.</p>
+        </div>
+    </section>
+
+    <!-- Main Cards Section -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="section-title">Learning Resources</h2>
+            <div class="cards-grid">
+                <div class="card" onclick="showNotAvailable()">
+                    <div class="card-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Classes</h3>
+                        <p>Interactive learning sessions with expert educators</p>
+                        <span class="status unavailable">Not Available</span>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="navigateToTests()">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tests</h3>
+                        <p>Practice with subject-wise quizzes and mock tests</p>
+                        <span class="status available">Available</span>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="showNotAvailable()">
+                    <div class="card-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>PDFs</h3>
+                        <p>Download study material and reference documents</p>
+                        <span class="status unavailable">Not Available</span>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="showNotAvailable()">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Information</h3>
+                        <p>Additional resources and updates</p>
+                        <span class="status unavailable">Not Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> Email: info@hbseducation.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Education Street, Knowledge City</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#tests">Tests</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>About HBS Education</h3>
+                    <p>Providing quality educational resources and practice tests to help students excel in their academic pursuits.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 HBS Education. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Scroll to Top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('active');
+            } else {
+                scrollToTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navigation functions
+        function navigateToTests() {
+            alert("Navigating to Tests page. In a real implementation, this would take you to the tests page.");
+            // window.location.href = "/tests"; // Actual navigation
+        }
+        
+        function showNotAvailable() {
+            alert("This feature is currently not available. Check back soon!");
+        }
+        
+        // Translator functionality
+        const translatorBtn = document.querySelector('.translator-btn');
+        let isHindi = false;
+        
+        translatorBtn.addEventListener('click', () => {
+            isHindi = !isHindi;
+            if (isHindi) {
+                // This would be replaced with actual translation API in production
+                document.querySelector('.hero h1').textContent = "एचबीएस एजुकेशन में आपका स्वागत है";
+                document.querySelector('.hero p').textContent = "स्ट्रक्चर्ड लर्निंग, प्रैक्टिस टेस्ट और शैक्षिक संसाधनों के लिए आपका प्रमुख स्थान। अपने ज्ञान को बढ़ाएं और अपनी शैक्षणिक यात्रा में उत्कृष्टता प्राप्त करें।";
+                translatorBtn.textContent = "अंग्रेज़ी ↔ हिंदी";
+            } else {
+                document.querySelector('.hero h1').textContent = "Welcome to HBS Education";
+                document.querySelector('.hero p').textContent = "Your premier destination for structured learning, practice tests, and educational resources. Enhance your knowledge and excel in your academic journey.";
+                translatorBtn.textContent = "English ↔ Hindi";
+            }
+        });
+    </script>
+</body>
+</html>
