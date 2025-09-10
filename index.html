@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hbs education </title>
-    <meta name="description" content="UPSC, SSC, Banking, Railway और अन्य प्रतियोगी परीक्षाओं की तैयारी के लिए मुफ्त स्टडी मटेरियल, टिप्स और गाइडेंस">
-    <meta name="keywords" content="परीक्षा तैयारी, प्रतियोगी परीक्षाएं, स्टडी टिप्स, UPSC, SSC, बैंकिंग, रेलवे, एग्जाम ब्लॉग">
+    <title>HBS Education - Competitive Exams Preparation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,7 +14,7 @@
         }
         
         body {
-            background-color: #f5f7fa;
+            background-color: #f0f8ff;
             color: #333;
             line-height: 1.6;
         }
@@ -30,19 +29,42 @@
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .nav-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         nav ul {
@@ -51,18 +73,22 @@
         }
         
         nav ul li {
-            margin-left: 25px;
+            margin-left: 20px;
+            position: relative;
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
             transition: all 0.3s ease;
+            display: block;
         }
         
-        nav ul li a:hover {
-            color: #ffd700;
+        nav ul li a:hover, nav ul li a.active {
+            background: rgba(255,255,255,0.2);
         }
         
         /* Hero Section */
@@ -74,7 +100,7 @@
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: #1e3c72;
         }
@@ -86,156 +112,218 @@
             color: #555;
         }
         
-        /* Blog Section */
-        .blog-section {
+        /* Features Section */
+        .features {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             margin-bottom: 40px;
         }
         
-        .main-content {
+        .feature-card {
             background: white;
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
         
-        .sidebar {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
         
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #1e3c72;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ffd700;
-        }
-        
-        .blog-post {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .blog-post:last-child {
-            border-bottom: none;
-        }
-        
-        .blog-post h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .feature-icon {
+            font-size: 2.5rem;
             color: #2a5298;
-        }
-        
-        .post-meta {
-            color: #777;
-            font-size: 0.9rem;
             margin-bottom: 15px;
         }
         
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: #1e3c72;
-            font-weight: 500;
-            text-decoration: none;
         }
         
-        .read-more:hover {
-            text-decoration: underline;
+        /* Exam Categories */
+        .exam-section {
+            margin-bottom: 40px;
         }
         
-        /* Category List */
-        .category-list {
-            list-style: none;
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #1e3c72;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff7e5f;
         }
         
-        .category-list li {
+        .exam-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .exam-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .exam-card:hover {
+            background: #1e3c72;
+            color: white;
+        }
+        
+        .exam-card:hover h3 {
+            color: white;
+        }
+        
+        .exam-card h3 {
+            font-size: 1.2rem;
             margin-bottom: 10px;
-            padding: 10px;
-            background: #f5f7fa;
-            border-radius: 5px;
-        }
-        
-        .category-list li a {
-            color: #333;
-            text-decoration: none;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .category-list li a:hover {
             color: #1e3c72;
         }
         
         /* Footer */
         footer {
-            background: #1e3c72;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 40px 0;
-            margin-top: 40px;
+            padding: 60px 0 30px;
+            margin-top: 60px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            padding: 0 15px;
         }
         
         .footer-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 20px;
             color: #ffd700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #ff7e5f;
         }
         
         .footer-section p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #f0f8ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            color: #ffd700;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
         
         .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
             color: white;
-            margin-right: 15px;
-            font-size: 1.2rem;
+            border-radius: 50%;
             text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #ff7e5f;
+            transform: translateY(-3px);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            margin-top: 20px;
+            padding-top: 30px;
+            margin-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
         }
         
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .blog-section {
-                grid-template-columns: 1fr;
+        @media (max-width: 992px) {
+            .features, .exam-categories, .footer-content {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-container {
+            .header-content {
                 flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
             }
             
             nav ul {
-                margin-top: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
             nav ul li {
-                margin-left: 15px;
-                margin-right: 15px;
+                margin: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features, .exam-categories, .footer-content {
+                grid-template-columns: 1fr;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .logo-text {
+                font-size: 22px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
             }
         }
     </style>
@@ -243,17 +331,22 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container nav-container">
-            <div class="logo">परीक्षा सफलता</div>
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="logo-text">HBS</span>
+                </div>
+                <div class="logo-text">HBS Education</div>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#">होम</a></li>
-                    <li><a href="#">यूपीएससी</a></li>
-                    <li><a href="#">एसएससी</a></li>
-                    <li><a href="#">बैंकिंग</a></li>
-                    <li><a href="#">रेलवे</a></li>
-                    <li><a href="#">ब्लॉग</a></li>
-                    <li><a href="#">संपर्क</a></li>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Admit Card</a></li>
+                    <li><a href="#">New Vacancy</a></li>
+                    <li><a href="#">Result</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -262,64 +355,82 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>परीक्षा की तैयारी के लिए संपूर्ण मार्गदर्शन</h1>
-            <p>UPSC, SSC, Banking, Railway और अन्य प्रतियोगी परीक्षाओं की तैयारी के लिए मुफ्त स्टडी मटेरियल, टिप्स और गाइडेंस</p>
+            <h1>HBS Education - Competitive Exams Preparation</h1>
+            <p>Your one-stop destination for all competitive exam resources - admit cards, vacancies, results, and study materials</p>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="container blog-section">
-        <!-- Main Content Area -->
-        <div class="main-content">
-            <h2 class="section-title">ताजा ब्लॉग पोस्ट</h2>
-            
-            <div class="blog-post">
-                <h3>UPSC परीक्षा की तैयारी कैसे शुरू करें: एक व्यापक गाइड</h3>
-                <div class="post-meta">15 अप्रैल 2023 | यूपीएससी | 15 Comments</div>
-                <p>UPSC परीक्षा भारत की सबसे कठिन प्रतियोगी परीक्षाओं में से एक है। इस लेख में हम जानेंगे कि UPSC परीक्षा की तैयारी कैसे शुरू करें, सही स्टडी मटेरियल कैसे चुनें और समय प्रबंधन कैसे करें...</p>
-                <a href="#" class="read-more">पूरा पढ़ें</a>
+    <!-- Features Section -->
+    <div class="container">
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Exam Preparation</h3>
+                <p>Comprehensive study materials for all competitive exams including UPSC, SSC, Banking, Railways and more.</p>
             </div>
             
-            <div class="blog-post">
-                <h3>SSC CGL टियर-1 की तैयारी के लिए 30 दिनों का स्टडी प्लान</h3>
-                <div class="post-meta">10 अप्रैल 2023 | एसएससी | 24 Comments</div>
-                <p>SSC CGL एक बेहतरीन करियर विकल्प है जिसमें लाखों छात्र हर साल भाग लेते हैं। इस लेख में हम SSC CGL टियर-1 की तैयारी के लिए 30 दिनों के अध्ययन योजना पर चर्चा करेंगे...</p>
-                <a href="#" class="read-more">पूरा पढ़ें</a>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Study Resources</h3>
+                <p>Access to previous year papers, mock tests, and expert-curated study plans for effective preparation.</p>
             </div>
             
-            <div class="blog-post">
-                <h3>बैंकिंग परीक्षाओं में Quantitative Aptitude को कैसे मजबूत करें</h3>
-                <div class="post-meta">5 अप्रैल 2023 | बैंकिंग | 18 Comments</div>
-                <p>Quantitative Aptitude बैंकिंग परीक्षाओं का एक महत्वपूर्ण भाग है। इस लेख में हम कुछ प्रभावी टिप्स और ट्रिक्स साझा करेंगे जो आपकी Quantitative Aptitude को मजबूत बनाने में मदद करेंगी...</p>
-                <a href="#" class="read-more">पूरा पढ़ें</a>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Latest Updates</h3>
+                <p>Get instant notifications about new exam vacancies, admit card releases, and result declarations.</p>
             </div>
         </div>
-        
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <h3 class="section-title">श्रेणियाँ</h3>
-            <ul class="category-list">
-                <li><a href="#">यूपीएससी <span>(15)</span></a></li>
-                <li><a href="#">एसएससी <span>(22)</span></a></li>
-                <li><a href="#">बैंकिंग <span>(18)</span></a></li>
-                <li><a href="#">रेलवे <span>(12)</span></a></li>
-                <li><a href="#">स्टडी टिप्स <span>(25)</span></a></li>
-                <li><a href="#">समय प्रबंधन <span>(10)</span></a></li>
-                <li><a href="#">मोटिवेशन <span>(8)</span></a></li>
-            </ul>
+    </div>
+
+    <!-- Exam Categories -->
+    <div class="container exam-section">
+        <h2 class="section-title">Popular Exam Categories</h2>
+        <div class="exam-categories">
+            <div class="exam-card">
+                <h3>UPSC Civil Services</h3>
+                <p>IAS, IPS, IFS and other central services</p>
+            </div>
             
-            <h3 class="section-title" style="margin-top: 30px;">लोकप्रिय पोस्ट</h3>
-            <div class="blog-post">
-                <h4>10 Effective Time Management Tips for Students</h4>
-                <div class="post-meta">3 April 2023</div>
+            <div class="exam-card">
+                <h3>SSC Exams</h3>
+                <p>CGL, CHSL, MTS, Steno and more</p>
             </div>
-            <div class="blog-post">
-                <h4>How to Improve Your Memory for Exam Preparation</h4>
-                <div class="post-meta">28 March 2023</div>
+            
+            <div class="exam-card">
+                <h3>Banking Exams</h3>
+                <p>IBPS, SBI, RBI and other banking jobs</p>
             </div>
-            <div class="blog-post">
-                <h4>Last Minute Preparation Tips for Board Exams</h4>
-                <div class="post-meta">20 March 2023</div>
+            
+            <div class="exam-card">
+                <h3>Railway Recruitment</h3>
+                <p>RRB NTPC, Group D, JE and other posts</p>
+            </div>
+            
+            <div class="exam-card">
+                <h3>Defense Exams</h3>
+                <p>NDA, CDS, AFCAT, CAPF and more</p>
+            </div>
+            
+            <div class="exam-card">
+                <h3>State PSCs</h3>
+                <p>State-level civil service examinations</p>
+            </div>
+            
+            <div class="exam-card">
+                <h3>Teaching Exams</h3>
+                <p>CTET, UGC NET, DSSSB and more</p>
+            </div>
+            
+            <div class="exam-card">
+                <h3>Medical Exams</h3>
+                <p>NEET, AIIMS, PGIMER and other medical entrances</p>
             </div>
         </div>
     </div>
@@ -329,31 +440,48 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>हमारे बारे में</h3>
-                    <p>परीक्षा सफलता एक शैक्षिक ब्लॉग है जो छात्रों को विभिन्न प्रतियोगी परीक्षाओं की तैयारी में मदद करता है।</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>जल्दी लिंक</h3>
-                    <p><a href="#">होम</a></p>
-                    <p><a href="#">ब्लॉग</a></p>
-                    <p><a href="#">संपर्क</a></p>
-                    <p><a href="#">गोपनीयता नीति</a></p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>हमसे जुड़ें</h3>
+                    <h3>About HBS Education</h3>
+                    <p>HBS Education is a premier platform for competitive exam preparation, providing comprehensive resources for UPSC, SSC, Banking, Railways and other government job exams.</p>
                     <div class="social-links">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">YouTube</a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Admit Card</a></li>
+                        <li><a href="#">New Vacancy</a></li>
+                        <li><a href="#">Result</a></li>
+                        <li><a href="#">Study Materials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Exam Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">UPSC Exams</a></li>
+                        <li><a href="#">SSC Exams</a></li>
+                        <li><a href="#">Banking Exams</a></li>
+                        <li><a href="#">Railway Exams</a></li>
+                        <li><a href="#">Defense Exams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Street, New Delhi</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@hbseducation.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>© 2023 परीक्षा सफलता. सभी अधिकार सुरक्षित</p>
+                <p>&copy; 2023 HBS Education. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
